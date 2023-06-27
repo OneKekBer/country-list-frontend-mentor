@@ -158,7 +158,7 @@ export const Info = (props) => {
                 </ListGroup>
                 <Meta>
                     <b>Border Countries</b>
-                    {!borders.length ? (
+                    {!bor.length ? (
                         <span>There is no border countries</span>
                     ) : (
                         <TagGroup>
