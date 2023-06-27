@@ -1,0 +1,25 @@
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+
+import thunk from "redux-thunk";
+import { rootReducer } from "./root-reducer";
+import axios from "axios";
+import * as api from "../config";
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+export const reducer = (state, action) => {
+    switch (action.type) {
+        case "value":
+            return state;
+
+        default:
+            return state;
+    }
+};
+
+export const store = createStore(
+    rootReducer,
+    composeEnhancers(
+        applyMiddleware(thunk.withExtraArgument({ client: axios, api }))
+    )
+);
